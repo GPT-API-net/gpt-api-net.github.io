@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gpt-api.net
+
+# Sitemaps
+Sitemap: https://gpt-api.net/sitemap.xml
