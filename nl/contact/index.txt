@@ -2,7 +2,7 @@
 5:I[1343,[],""]
 7:I[6038,["8056","static/chunks/8056-da6b6231371f84f7.js","9160","static/chunks/app/not-found-fed98bd7880fcf8f.js"],"default"]
 4:["lang","nl","d"]
-0:["rDZygXbD-uBs_VpSP4Dax",[[["",{"children":[["lang","nl","d"],{"children":["contact",{"children":["__PAGE__?{\"lang\":\"nl\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["lang","nl","d"],{"children":["contact",{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","contact","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}],null]},["$L6",null],null]},[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L7",null,{}],"notFoundStyles":[],"styles":null}],null],null],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/05ca55398093424a.css","precedence":"next","crossOrigin":"$undefined"}]],"$L8"]]]]
+0:["g8FPVZ5RLRxoei9cE-Z0t",[[["",{"children":[["lang","nl","d"],{"children":["contact",{"children":["__PAGE__?{\"lang\":\"nl\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["lang","nl","d"],{"children":["contact",{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","contact","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}],null]},["$L6",null],null]},[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L7",null,{}],"notFoundStyles":[],"styles":null}],null],null],[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/05ca55398093424a.css","precedence":"next","crossOrigin":"$undefined"}]],"$L8"]]]]
 9:I[5806,["8056","static/chunks/8056-da6b6231371f84f7.js","4673","static/chunks/4673-365adf3970fb9263.js","811","static/chunks/811-78a01170b3df7723.js","9929","static/chunks/app/%5Blang%5D/contact/page-6b0d18b6b1405aaf.js"],"default"]
 a:I[6284,["8056","static/chunks/8056-da6b6231371f84f7.js","4673","static/chunks/4673-365adf3970fb9263.js","811","static/chunks/811-78a01170b3df7723.js","9929","static/chunks/app/%5Blang%5D/contact/page-6b0d18b6b1405aaf.js"],"default"]
 c:I[8958,["5706","static/chunks/9c4e2130-111ac8d09ac54ee5.js","7240","static/chunks/53c13509-b2f8a141e1a83563.js","8056","static/chunks/8056-da6b6231371f84f7.js","4673","static/chunks/4673-365adf3970fb9263.js","6648","static/chunks/6648-cfbc640c3f4fd352.js","1084","static/chunks/app/%5Blang%5D/layout-2f7d6023ac892ee2.js"],"default"]
@@ -11,7 +11,7 @@ d:I[7743,["5706","static/chunks/9c4e2130-111ac8d09ac54ee5.js","7240","static/chu
 12:I[8984,["8056","static/chunks/8056-da6b6231371f84f7.js","3097","static/chunks/app/%5Blang%5D/not-found-ee362198e4022cf9.js"],"default"]
 13:I[5045,["5706","static/chunks/9c4e2130-111ac8d09ac54ee5.js","7240","static/chunks/53c13509-b2f8a141e1a83563.js","8056","static/chunks/8056-da6b6231371f84f7.js","4673","static/chunks/4673-365adf3970fb9263.js","6648","static/chunks/6648-cfbc640c3f4fd352.js","1084","static/chunks/app/%5Blang%5D/layout-2f7d6023ac892ee2.js"],"default"]
 2c:I[8025,["5706","static/chunks/9c4e2130-111ac8d09ac54ee5.js","7240","static/chunks/53c13509-b2f8a141e1a83563.js","8056","static/chunks/8056-da6b6231371f84f7.js","4673","static/chunks/4673-365adf3970fb9263.js","6648","static/chunks/6648-cfbc640c3f4fd352.js","1084","static/chunks/app/%5Blang%5D/layout-2f7d6023ac892ee2.js"],"default"]
-b:T5e8,var form = document.getElementById("my-form");
+b:T67e,var form = document.getElementById("my-form");
   async function handleSubmit(event) {
     event.preventDefault();
     const submitForm = (token) => {
@@ -44,11 +44,15 @@ b:T5e8,var form = document.getElementById("my-form");
       });
     }
     if ("6LcbliUqAAAAADtNdU3wChCQ3OSaaLgCR2gjrV8-") {
-      window.grecaptcha.enterprise.ready(async () => {
-        const token = await window.grecaptcha.enterprise.execute('6LcbliUqAAAAADtNdU3wChCQ3OSaaLgCR2gjrV8-', {action: 'SUBMIT'});
-        console.log('@@@token', token)
-        submitForm(token)
-      })
+      if (window.grecaptcha && window.grecaptcha.enterprise) {
+        window.grecaptcha.enterprise.ready(async () => {
+          const token = await window.grecaptcha.enterprise.execute('6LcbliUqAAAAADtNdU3wChCQ3OSaaLgCR2gjrV8-', {action: 'SUBMIT'});
+          console.log('@@@token', token)
+          submitForm(token)
+        })
+      } else {
+        console.error('reCAPTCHA library not loaded')
+      }
     } else {
       submitForm()
     }
